@@ -1,0 +1,9 @@
+<map id="server/DbServer/databasemanager.h" name="server/DbServer/databasemanager.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="267,5,501,32"/>
+<area shape="rect" id="Node000002" href="$databasemanager_8cpp.html" title=" " alt="" coords="5,88,254,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="332,38,170,90,169,85,328,36"/>
+<area shape="rect" id="Node000003" href="$dbtcpserver_8cpp.html" title=" " alt="" coords="278,88,491,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="386,46,386,89,382,86,382,50"/>
+<area shape="rect" id="Node000004" href="$main__db_8cpp.html" title=" " alt="" coords="515,80,664,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="431,35,539,79,534,79,430,41"/>
+</map>

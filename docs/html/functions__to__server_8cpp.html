@@ -1,0 +1,825 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Клиент-серверное приложение по ТиМП: Файл server/Server/functions_to_server.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Клиент-серверное приложение по ТиМП
+   </div>
+   <div id="projectbrief">Приложение для демонстрации клиент-серверной архитектуры с функционалом: регистрация, авторизация, MD5, метод секущих, работа с графом, RSA шифрование Выполнили: Федотов Егор, Давыденков Степан, Жуковский Кирилл, Токарев Андрей, Степанов Степан</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('functions__to__server_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл functions_to_server.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="functions__to__server_8h_source.html">functions_to_server.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dbclient_8h_source.html">dbclient.h</a>&quot;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;QSet&gt;</code><br />
+<code>#include &lt;QDateTime&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;QElapsedTimer&gt;</code><br />
+<code>#include &lt;QQueue&gt;</code><br />
+<code>#include &lt;climits&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для functions_to_server.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions__to__server_8cpp__incl.png" border="0" usemap="#aserver_2_server_2functions__to__server_8cpp" loading="lazy" alt=""/></div>
+<map name="aserver_2_server_2functions__to__server_8cpp" id="aserver_2_server_2functions__to__server_8cpp">
+<area shape="rect" title=" " alt="" coords="543,5,699,48"/>
+<area shape="rect" href="functions__to__server_8h.html" title=" " alt="" coords="5,96,152,123"/>
+<area shape="poly" title=" " alt="" coords="543,42,167,98,166,92,543,37"/>
+<area shape="rect" href="dbclient_8h.html" title=" " alt="" coords="176,96,253,123"/>
+<area shape="poly" title=" " alt="" coords="541,44,269,98,268,93,544,40"/>
+<area shape="rect" title=" " alt="" coords="277,96,346,123"/>
+<area shape="poly" title=" " alt="" coords="540,49,362,98,360,93,545,48"/>
+<area shape="rect" title=" " alt="" coords="371,96,428,123"/>
+<area shape="poly" title=" " alt="" coords="567,48,444,95,442,90,562,49"/>
+<area shape="rect" title=" " alt="" coords="453,96,504,123"/>
+<area shape="poly" title=" " alt="" coords="587,48,515,91,513,86,582,49"/>
+<area shape="rect" title=" " alt="" coords="528,96,616,123"/>
+<area shape="poly" title=" " alt="" coords="611,47,589,85,586,81,606,50"/>
+<area shape="rect" title=" " alt="" coords="640,96,701,123"/>
+<area shape="poly" title=" " alt="" coords="635,46,657,84,652,82,633,51"/>
+<area shape="rect" title=" " alt="" coords="725,96,789,123"/>
+<area shape="poly" title=" " alt="" coords="657,46,725,88,720,87,656,51"/>
+<area shape="rect" title=" " alt="" coords="814,96,874,123"/>
+<area shape="poly" title=" " alt="" coords="679,46,802,92,796,92,678,51"/>
+<area shape="rect" title=" " alt="" coords="898,96,1009,123"/>
+<area shape="poly" title=" " alt="" coords="700,44,889,92,883,92,700,50"/>
+<area shape="rect" title=" " alt="" coords="1033,96,1102,123"/>
+<area shape="poly" title=" " alt="" coords="700,37,844,60,1021,95,1015,96,843,65,700,42"/>
+<area shape="rect" title=" " alt="" coords="1126,96,1186,123"/>
+<area shape="poly" title=" " alt="" coords="700,33,884,55,996,72,1114,96,1108,96,996,77,884,60,700,38"/>
+<area shape="rect" title=" " alt="" coords="62,171,127,197"/>
+<area shape="poly" title=" " alt="" coords="83,121,91,156,86,155,80,125"/>
+<area shape="poly" title=" " alt="" coords="196,123,130,165,127,160,191,124"/>
+<area shape="rect" title=" " alt="" coords="160,171,253,197"/>
+<area shape="poly" title=" " alt="" coords="215,121,212,157,207,154,211,125"/>
+<area shape="rect" title=" " alt="" coords="277,171,344,197"/>
+<area shape="poly" title=" " alt="" coords="232,121,284,161,279,161,230,126"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:MyMD5" id="r_MyMD5"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_my_m_d5.html">MyMD5</a></td></tr>
+<tr class="memitem:Graph" id="r_Graph"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_graph.html">Graph</a></td></tr>
+<tr class="memitem:GeneticPathFinder" id="r_GeneticPathFinder"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_genetic_path_finder.html">GeneticPathFinder</a></td></tr>
+<tr class="memitem:SimpleRSA" id="r_SimpleRSA"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_simple_r_s_a.html">SimpleRSA</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:abb295ee35fec9932730fea43d8286e8c" id="r_abb295ee35fec9932730fea43d8286e8c"><td class="memItemLeft">static QStringList&#160;</td><td class="memItemRight"><a class="el" href="#abb295ee35fec9932730fea43d8286e8c">splitLines</a> (const QString &amp;resp)</td></tr>
+<tr class="memitem:a5abb6a8511bd312350d4c2d6ff35eea6" id="r_a5abb6a8511bd312350d4c2d6ff35eea6"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a5abb6a8511bd312350d4c2d6ff35eea6">initGraph</a> ()</td></tr>
+<tr class="memitem:ae52e48754cb2dc458ea5835eb894a1d4" id="r_ae52e48754cb2dc458ea5835eb894a1d4"><td class="memItemLeft">static double&#160;</td><td class="memItemRight"><a class="el" href="#ae52e48754cb2dc458ea5835eb894a1d4">secantSqrt</a> (double a, double eps=1e-7)</td></tr>
+<tr class="memitem:ac51c20dd340b9cd97589ad9bceb9c93f" id="r_ac51c20dd340b9cd97589ad9bceb9c93f"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#ac51c20dd340b9cd97589ad9bceb9c93f">handleRegister</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:ac51c20dd340b9cd97589ad9bceb9c93f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает регистрацию нового пользователя  <br /></td></tr>
+<tr class="memitem:a9e13d9d25c00969694e5860e18a64f63" id="r_a9e13d9d25c00969694e5860e18a64f63"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a9e13d9d25c00969694e5860e18a64f63">handleAuth</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a9e13d9d25c00969694e5860e18a64f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает авторизацию пользователя  <br /></td></tr>
+<tr class="memitem:ab27c0df47f53ff40361e24d3d81e6527" id="r_ab27c0df47f53ff40361e24d3d81e6527"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#ab27c0df47f53ff40361e24d3d81e6527">handleStats</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:ab27c0df47f53ff40361e24d3d81e6527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает количество зарегистрированных пользователей  <br /></td></tr>
+<tr class="memitem:aa1270761f00030358c560e5557b80313" id="r_aa1270761f00030358c560e5557b80313"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#aa1270761f00030358c560e5557b80313">handleMD5</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:aa1270761f00030358c560e5557b80313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет MD5 хэш входной строки (собственная реализация).  <br /></td></tr>
+<tr class="memitem:a2e52b96f6b2dfa863794879662390794" id="r_a2e52b96f6b2dfa863794879662390794"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a2e52b96f6b2dfa863794879662390794">handleSecant</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a2e52b96f6b2dfa863794879662390794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисляет квадратный корень методом секущих  <br /></td></tr>
+<tr class="memitem:a78dfd05412adbee008c655a7ed2dc556" id="r_a78dfd05412adbee008c655a7ed2dc556"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a78dfd05412adbee008c655a7ed2dc556">handleCycle</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a78dfd05412adbee008c655a7ed2dc556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, является ли последовательность вершин циклом в графе  <br /></td></tr>
+<tr class="memitem:a4fa1021501e8ed79ed64470f4b4641ce" id="r_a4fa1021501e8ed79ed64470f4b4641ce"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a4fa1021501e8ed79ed64470f4b4641ce">handleAddEdge</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a4fa1021501e8ed79ed64470f4b4641ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет новое ребро в граф  <br /></td></tr>
+<tr class="memitem:ae0408268f157dc5056898cf0a6efa3da" id="r_ae0408268f157dc5056898cf0a6efa3da"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#ae0408268f157dc5056898cf0a6efa3da">handleRemoveEdge</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:ae0408268f157dc5056898cf0a6efa3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет ребро из графа  <br /></td></tr>
+<tr class="memitem:a6acffca1f75419bb3143b4f98df0fad0" id="r_a6acffca1f75419bb3143b4f98df0fad0"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a6acffca1f75419bb3143b4f98df0fad0">handleGetGraph</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a6acffca1f75419bb3143b4f98df0fad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает список всех рёбер графа  <br /></td></tr>
+<tr class="memitem:af09843cb9af309116fa05e5b191f3541" id="r_af09843cb9af309116fa05e5b191f3541"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#af09843cb9af309116fa05e5b191f3541">handleSetEdgeWeight</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:af09843cb9af309116fa05e5b191f3541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Изменяет вес существующего ребра  <br /></td></tr>
+<tr class="memitem:a2e2f194e745d96fa90065508d7c63a33" id="r_a2e2f194e745d96fa90065508d7c63a33"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a2e2f194e745d96fa90065508d7c63a33">handleShortest</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a2e2f194e745d96fa90065508d7c63a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Находит кратчайший путь между вершинами (алгоритм Дейкстры).  <br /></td></tr>
+<tr class="memitem:a12f059d395b13c3ad8efca085cfea014" id="r_a12f059d395b13c3ad8efca085cfea014"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a12f059d395b13c3ad8efca085cfea014">handleGeneticPath</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a12f059d395b13c3ad8efca085cfea014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Находит кратчайший путь с помощью генетического алгоритма  <br /></td></tr>
+<tr class="memitem:a4cc26f5aa1d4b553c19248850af3891e" id="r_a4cc26f5aa1d4b553c19248850af3891e"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a4cc26f5aa1d4b553c19248850af3891e">handleAdminAuth</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a4cc26f5aa1d4b553c19248850af3891e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Аутентификация администратора  <br /></td></tr>
+<tr class="memitem:a0908e46d1332eb77464a7ff1cece1cf9" id="r_a0908e46d1332eb77464a7ff1cece1cf9"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a0908e46d1332eb77464a7ff1cece1cf9">handleAdminGetUsers</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a0908e46d1332eb77464a7ff1cece1cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает список всех пользователей (только для администратора).  <br /></td></tr>
+<tr class="memitem:a89208299ccebb7b620905fe0f3633e82" id="r_a89208299ccebb7b620905fe0f3633e82"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a89208299ccebb7b620905fe0f3633e82">handleAdminSetStatus</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a89208299ccebb7b620905fe0f3633e82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Изменяет статус пользователя (только для администратора).  <br /></td></tr>
+<tr class="memitem:a29d02d7053c6d07937f114a579067953" id="r_a29d02d7053c6d07937f114a579067953"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a29d02d7053c6d07937f114a579067953">initRSA</a> ()</td></tr>
+<tr class="memitem:a699f161b566455fabe85f8ecf391d6fc" id="r_a699f161b566455fabe85f8ecf391d6fc"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a699f161b566455fabe85f8ecf391d6fc">handleRsaPubkey</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a699f161b566455fabe85f8ecf391d6fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает публичный ключ RSA.  <br /></td></tr>
+<tr class="memitem:a30603a9ba9e15899e4ba6ce106a42bb2" id="r_a30603a9ba9e15899e4ba6ce106a42bb2"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a30603a9ba9e15899e4ba6ce106a42bb2">handleRsaEncrypt</a> (const QString &amp;payload)</td></tr>
+<tr class="memdesc:a30603a9ba9e15899e4ba6ce106a42bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Расшифровывает сообщение, зашифрованное публичным ключом  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a79a573ead42060b67960b33fa0e87a2c" id="r_a79a573ead42060b67960b33fa0e87a2c"><td class="memItemLeft">static <a class="el" href="struct_graph.html">Graph</a>&#160;</td><td class="memItemRight"><a class="el" href="#a79a573ead42060b67960b33fa0e87a2c">graph</a></td></tr>
+<tr class="memitem:a4ec36768a698e206e4d4bb97ba4fb190" id="r_a4ec36768a698e206e4d4bb97ba4fb190"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a4ec36768a698e206e4d4bb97ba4fb190">graphInited</a> = false</td></tr>
+<tr class="memitem:af5f8383dba99e9acfb03761f40862a4e" id="r_af5f8383dba99e9acfb03761f40862a4e"><td class="memItemLeft">static <a class="el" href="class_simple_r_s_a.html">SimpleRSA</a> *&#160;</td><td class="memItemRight"><a class="el" href="#af5f8383dba99e9acfb03761f40862a4e">rsa</a> = nullptr</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="a4fa1021501e8ed79ed64470f4b4641ce" name="a4fa1021501e8ed79ed64470f4b4641ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa1021501e8ed79ed64470f4b4641ce">&#9670;&#160;</a></span>handleAddEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleAddEdge </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавляет новое ребро в граф </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Формат: "u,v" или "u,v,weight" (например, "5,6" или "5,6,3") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"GRAPH_OK: Edge added with weight N" или "GRAPH_ERR: ..." </dd></dl>
+
+</div>
+</div>
+<a id="a4cc26f5aa1d4b553c19248850af3891e" name="a4cc26f5aa1d4b553c19248850af3891e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cc26f5aa1d4b553c19248850af3891e">&#9670;&#160;</a></span>handleAdminAuth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleAdminAuth </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Аутентификация администратора </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Формат: "login,password" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"ADMIN_AUTH_OK: Access granted" или "ADMIN_AUTH_ERR: ..." </dd></dl>
+
+</div>
+</div>
+<a id="a0908e46d1332eb77464a7ff1cece1cf9" name="a0908e46d1332eb77464a7ff1cece1cf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0908e46d1332eb77464a7ff1cece1cf9">&#9670;&#160;</a></span>handleAdminGetUsers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleAdminGetUsers </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает список всех пользователей (только для администратора). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>(не используется) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"ADMIN_USERS: {список login | status}" </dd></dl>
+
+</div>
+</div>
+<a id="a89208299ccebb7b620905fe0f3633e82" name="a89208299ccebb7b620905fe0f3633e82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89208299ccebb7b620905fe0f3633e82">&#9670;&#160;</a></span>handleAdminSetStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleAdminSetStatus </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Изменяет статус пользователя (только для администратора). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Формат: "login,status" (status: online, offline, banned, admin) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"ADMIN_OK: Status updated for user {login}" или "ADMIN_ERR: ..." </dd></dl>
+
+</div>
+</div>
+<a id="a9e13d9d25c00969694e5860e18a64f63" name="a9e13d9d25c00969694e5860e18a64f63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e13d9d25c00969694e5860e18a64f63">&#9670;&#160;</a></span>handleAuth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleAuth </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обрабатывает авторизацию пользователя </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Строка формата "login,password" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"AUTH_OK: Welcome {login}" или "AUTH_ERR: ..." </dd></dl>
+
+</div>
+</div>
+<a id="a78dfd05412adbee008c655a7ed2dc556" name="a78dfd05412adbee008c655a7ed2dc556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78dfd05412adbee008c655a7ed2dc556">&#9670;&#160;</a></span>handleCycle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleCycle </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, является ли последовательность вершин циклом в графе </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Последовательность вершин через запятую (например, "1,2,3,1") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"CYCLE_OK: Valid cycle with N edges" или "CYCLE_ERR: ..." </dd></dl>
+
+</div>
+</div>
+<a id="a12f059d395b13c3ad8efca085cfea014" name="a12f059d395b13c3ad8efca085cfea014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12f059d395b13c3ad8efca085cfea014">&#9670;&#160;</a></span>handleGeneticPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleGeneticPath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Находит кратчайший путь с помощью генетического алгоритма </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Формат: "s,t" (например, "1,4") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"GENETIC_RESULT: Path from s to t (weight=W): path" </dd></dl>
+
+</div>
+</div>
+<a id="a6acffca1f75419bb3143b4f98df0fad0" name="a6acffca1f75419bb3143b4f98df0fad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6acffca1f75419bb3143b4f98df0fad0">&#9670;&#160;</a></span>handleGetGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleGetGraph </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает список всех рёбер графа </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>(не используется) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"GRAPH_EDGES: {список рёбер с весами}" </dd></dl>
+
+</div>
+</div>
+<a id="aa1270761f00030358c560e5557b80313" name="aa1270761f00030358c560e5557b80313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1270761f00030358c560e5557b80313">&#9670;&#160;</a></span>handleMD5()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleMD5 </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вычисляет MD5 хэш входной строки (собственная реализация). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Строка для хэширования </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"MD5: {32-символьный хэш}" или "MD5_ERR: ..." </dd></dl>
+
+</div>
+</div>
+<a id="ac51c20dd340b9cd97589ad9bceb9c93f" name="ac51c20dd340b9cd97589ad9bceb9c93f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac51c20dd340b9cd97589ad9bceb9c93f">&#9670;&#160;</a></span>handleRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleRegister </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обрабатывает регистрацию нового пользователя </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Строка формата "login,password" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"REGISTER_OK: User created successfully" или "REGISTER_ERR: ..." </dd></dl>
+
+</div>
+</div>
+<a id="ae0408268f157dc5056898cf0a6efa3da" name="ae0408268f157dc5056898cf0a6efa3da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0408268f157dc5056898cf0a6efa3da">&#9670;&#160;</a></span>handleRemoveEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleRemoveEdge </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаляет ребро из графа </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Формат: "u,v" (например, "5,6") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"GRAPH_OK: Edge removed successfully" или "GRAPH_ERR: ..." </dd></dl>
+
+</div>
+</div>
+<a id="a30603a9ba9e15899e4ba6ce106a42bb2" name="a30603a9ba9e15899e4ba6ce106a42bb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30603a9ba9e15899e4ba6ce106a42bb2">&#9670;&#160;</a></span>handleRsaEncrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleRsaEncrypt </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Расшифровывает сообщение, зашифрованное публичным ключом </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Зашифрованное сообщение в base64 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"RSA_DECRYPT:{расшифрованное сообщение}" или "RSA_ERR: ..." </dd></dl>
+
+</div>
+</div>
+<a id="a699f161b566455fabe85f8ecf391d6fc" name="a699f161b566455fabe85f8ecf391d6fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a699f161b566455fabe85f8ecf391d6fc">&#9670;&#160;</a></span>handleRsaPubkey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleRsaPubkey </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает публичный ключ RSA. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>(не используется) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"RSA_PUBKEY:n,e" </dd></dl>
+
+</div>
+</div>
+<a id="a2e52b96f6b2dfa863794879662390794" name="a2e52b96f6b2dfa863794879662390794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e52b96f6b2dfa863794879662390794">&#9670;&#160;</a></span>handleSecant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleSecant </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вычисляет квадратный корень методом секущих </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Число в виде строки </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"SECANT_RESULT: {значение}" или "SECANT_ERR: ..." </dd></dl>
+
+</div>
+</div>
+<a id="af09843cb9af309116fa05e5b191f3541" name="af09843cb9af309116fa05e5b191f3541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af09843cb9af309116fa05e5b191f3541">&#9670;&#160;</a></span>handleSetEdgeWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleSetEdgeWeight </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Изменяет вес существующего ребра </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Формат: "u,v,weight" (например, "1,2,5") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"GRAPH_OK: Edge weight changed" или "GRAPH_ERR: ..." </dd></dl>
+
+</div>
+</div>
+<a id="a2e2f194e745d96fa90065508d7c63a33" name="a2e2f194e745d96fa90065508d7c63a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e2f194e745d96fa90065508d7c63a33">&#9670;&#160;</a></span>handleShortest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleShortest </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Находит кратчайший путь между вершинами (алгоритм Дейкстры). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Формат: "s,t" (например, "1,4") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"GRAPH: Shortest path from s to t (total weight=W): path" </dd></dl>
+
+</div>
+</div>
+<a id="ab27c0df47f53ff40361e24d3d81e6527" name="ab27c0df47f53ff40361e24d3d81e6527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab27c0df47f53ff40361e24d3d81e6527">&#9670;&#160;</a></span>handleStats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString handleStats </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>payload</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает количество зарегистрированных пользователей </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>(не используется) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>"STATS: Total users = N" </dd></dl>
+
+</div>
+</div>
+<a id="a5abb6a8511bd312350d4c2d6ff35eea6" name="a5abb6a8511bd312350d4c2d6ff35eea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5abb6a8511bd312350d4c2d6ff35eea6">&#9670;&#160;</a></span>initGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initGraph </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29d02d7053c6d07937f114a579067953" name="a29d02d7053c6d07937f114a579067953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29d02d7053c6d07937f114a579067953">&#9670;&#160;</a></span>initRSA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initRSA </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae52e48754cb2dc458ea5835eb894a1d4" name="ae52e48754cb2dc458ea5835eb894a1d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae52e48754cb2dc458ea5835eb894a1d4">&#9670;&#160;</a></span>secantSqrt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double secantSqrt </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>eps</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-7</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb295ee35fec9932730fea43d8286e8c" name="abb295ee35fec9932730fea43d8286e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb295ee35fec9932730fea43d8286e8c">&#9670;&#160;</a></span>splitLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList splitLines </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>resp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Переменные</h2>
+<a id="a79a573ead42060b67960b33fa0e87a2c" name="a79a573ead42060b67960b33fa0e87a2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79a573ead42060b67960b33fa0e87a2c">&#9670;&#160;</a></span>graph</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_graph.html">Graph</a> graph</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ec36768a698e206e4d4bb97ba4fb190" name="a4ec36768a698e206e4d4bb97ba4fb190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ec36768a698e206e4d4bb97ba4fb190">&#9670;&#160;</a></span>graphInited</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool graphInited = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af5f8383dba99e9acfb03761f40862a4e" name="af5f8383dba99e9acfb03761f40862a4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5f8383dba99e9acfb03761f40862a4e">&#9670;&#160;</a></span>rsa</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_simple_r_s_a.html">SimpleRSA</a>* rsa = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_41e1742e44e2de38b3bc91f993fed282.html">server</a></li><li class="navelem"><a href="dir_e1917855a2e008a45f7960aba32d3bf1.html">Server</a></li><li class="navelem"><a href="functions__to__server_8cpp.html">functions_to_server.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

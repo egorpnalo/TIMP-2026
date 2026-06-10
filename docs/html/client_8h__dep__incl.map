@@ -1,0 +1,13 @@
+<map id="client/client/client.h" name="client/client/client.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="378,5,512,32"/>
+<area shape="rect" id="Node000002" href="$moc__client_8cpp.html" title=" " alt="" coords="5,80,178,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="372,38,191,83,179,86,177,81,190,77,375,34"/>
+<area shape="rect" id="Node000003" href="$client_8cpp.html" title=" " alt="" coords="202,96,349,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="410,39,301,98,299,93,404,40"/>
+<area shape="rect" id="Node000004" href="$client_2client_2main_8cpp.html" title=" " alt="" coords="373,96,517,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="447,46,447,97,443,94,443,50"/>
+<area shape="rect" id="Node000005" href="$mainwindow_8cpp.html" title=" " alt="" coords="540,96,728,123"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="486,36,610,95,604,95,485,42"/>
+<area shape="rect" id="Node000006" href="$regandauth_8cpp.html" title=" " alt="" coords="752,96,932,123"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="527,33,740,77,801,96,796,95,739,83,527,38"/>
+</map>

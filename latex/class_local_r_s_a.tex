@@ -1,0 +1,128 @@
+\doxysection{Класс Local\+RSA}
+\hypertarget{class_local_r_s_a}{}\label{class_local_r_s_a}\index{LocalRSA@{LocalRSA}}
+
+
+{\ttfamily \+\#include $<$mainwindow.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_local_r_s_a_a0d99392cba08b0455e55cbd13780d30f}{Local\+RSA}} ()
+\item 
+void \doxymbox{\hyperlink{class_local_r_s_a_a03298f6079bc290fd9ef90ebff125690}{generate\+Keys}} ()
+\item 
+void \doxymbox{\hyperlink{class_local_r_s_a_a528b9e8d45d0e5f17a3638c397f9c659}{set\+Public\+Key}} (long long n, long long e)
+\item 
+void \doxymbox{\hyperlink{class_local_r_s_a_a0b5689f8e23bc7a7dd397264f85c757c}{set\+Private\+Key}} (long long n, long long d)
+\item 
+long long \doxymbox{\hyperlink{class_local_r_s_a_af95bdfb795171b4b1fa61b73ee409445}{getN}} () const
+\item 
+long long \doxymbox{\hyperlink{class_local_r_s_a_a7e6461ded9c959b39f545963839a39fd}{getE}} () const
+\item 
+long long \doxymbox{\hyperlink{class_local_r_s_a_a904430b9d802814ddf9ec1a899608634}{getD}} () const
+\item 
+bool \doxymbox{\hyperlink{class_local_r_s_a_a2c7e7322fb3b3f48c9597656db5c9748}{has\+Public\+Key}} () const
+\item 
+bool \doxymbox{\hyperlink{class_local_r_s_a_a9f1f64b917cb1ef8c5cbd64aae745461}{has\+Private\+Key}} () const
+\item 
+long long \doxymbox{\hyperlink{class_local_r_s_a_a39834cea038b956b50177c683772a1b3}{encrypt}} (long long message)
+\item 
+long long \doxymbox{\hyperlink{class_local_r_s_a_a2df0d3f72afdc46982980c7a3b86a69c}{decrypt}} (long long cipher)
+\item 
+QString \doxymbox{\hyperlink{class_local_r_s_a_a2d2ea1c3b4439d45fbf4b762fccfd137}{encrypt\+String}} (const QString \&plain)
+\item 
+QString \doxymbox{\hyperlink{class_local_r_s_a_ab1bd769171a684d99bf3f8e5bc306e6a}{decrypt\+String}} (const QString \&cipher)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_local_r_s_a_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{class_local_r_s_a_a0d99392cba08b0455e55cbd13780d30f}\index{LocalRSA@{LocalRSA}!LocalRSA@{LocalRSA}}
+\index{LocalRSA@{LocalRSA}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{LocalRSA()}{LocalRSA()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_a0d99392cba08b0455e55cbd13780d30f} 
+Local\+RSA::\+\+Local\+RSA (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_local_r_s_a_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{class_local_r_s_a_a2df0d3f72afdc46982980c7a3b86a69c}\index{LocalRSA@{LocalRSA}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_a2df0d3f72afdc46982980c7a3b86a69c} 
+long long Local\+RSA::\+decrypt (\begin{DoxyParamCaption}\item[{long long}]{cipher}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_local_r_s_a_ab1bd769171a684d99bf3f8e5bc306e6a}\index{LocalRSA@{LocalRSA}!decryptString@{decryptString}}
+\index{decryptString@{decryptString}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{decryptString()}{decryptString()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_ab1bd769171a684d99bf3f8e5bc306e6a} 
+QString Local\+RSA::\+decrypt\+String (\begin{DoxyParamCaption}\item[{const QString \&}]{cipher}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_local_r_s_a_a39834cea038b956b50177c683772a1b3}\index{LocalRSA@{LocalRSA}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_a39834cea038b956b50177c683772a1b3} 
+long long Local\+RSA::\+encrypt (\begin{DoxyParamCaption}\item[{long long}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_local_r_s_a_a2d2ea1c3b4439d45fbf4b762fccfd137}\index{LocalRSA@{LocalRSA}!encryptString@{encryptString}}
+\index{encryptString@{encryptString}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{encryptString()}{encryptString()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_a2d2ea1c3b4439d45fbf4b762fccfd137} 
+QString Local\+RSA::\+encrypt\+String (\begin{DoxyParamCaption}\item[{const QString \&}]{plain}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_local_r_s_a_a03298f6079bc290fd9ef90ebff125690}\index{LocalRSA@{LocalRSA}!generateKeys@{generateKeys}}
+\index{generateKeys@{generateKeys}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{generateKeys()}{generateKeys()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_a03298f6079bc290fd9ef90ebff125690} 
+void Local\+RSA::\+generate\+Keys (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_local_r_s_a_a904430b9d802814ddf9ec1a899608634}\index{LocalRSA@{LocalRSA}!getD@{getD}}
+\index{getD@{getD}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{getD()}{getD()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_a904430b9d802814ddf9ec1a899608634} 
+long long Local\+RSA::\+getD (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_local_r_s_a_a7e6461ded9c959b39f545963839a39fd}\index{LocalRSA@{LocalRSA}!getE@{getE}}
+\index{getE@{getE}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{getE()}{getE()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_a7e6461ded9c959b39f545963839a39fd} 
+long long Local\+RSA::\+getE (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_local_r_s_a_af95bdfb795171b4b1fa61b73ee409445}\index{LocalRSA@{LocalRSA}!getN@{getN}}
+\index{getN@{getN}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{getN()}{getN()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_af95bdfb795171b4b1fa61b73ee409445} 
+long long Local\+RSA::\+getN (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_local_r_s_a_a9f1f64b917cb1ef8c5cbd64aae745461}\index{LocalRSA@{LocalRSA}!hasPrivateKey@{hasPrivateKey}}
+\index{hasPrivateKey@{hasPrivateKey}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{hasPrivateKey()}{hasPrivateKey()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_a9f1f64b917cb1ef8c5cbd64aae745461} 
+bool Local\+RSA::\+has\+Private\+Key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_local_r_s_a_a2c7e7322fb3b3f48c9597656db5c9748}\index{LocalRSA@{LocalRSA}!hasPublicKey@{hasPublicKey}}
+\index{hasPublicKey@{hasPublicKey}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{hasPublicKey()}{hasPublicKey()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_a2c7e7322fb3b3f48c9597656db5c9748} 
+bool Local\+RSA::\+has\+Public\+Key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_local_r_s_a_a0b5689f8e23bc7a7dd397264f85c757c}\index{LocalRSA@{LocalRSA}!setPrivateKey@{setPrivateKey}}
+\index{setPrivateKey@{setPrivateKey}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{setPrivateKey()}{setPrivateKey()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_a0b5689f8e23bc7a7dd397264f85c757c} 
+void Local\+RSA::\+set\+Private\+Key (\begin{DoxyParamCaption}\item[{long long}]{n}{, }\item[{long long}]{d}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_local_r_s_a_a528b9e8d45d0e5f17a3638c397f9c659}\index{LocalRSA@{LocalRSA}!setPublicKey@{setPublicKey}}
+\index{setPublicKey@{setPublicKey}!LocalRSA@{LocalRSA}}
+\doxysubsubsection{\texorpdfstring{setPublicKey()}{setPublicKey()}}
+{\footnotesize\ttfamily \label{class_local_r_s_a_a528b9e8d45d0e5f17a3638c397f9c659} 
+void Local\+RSA::\+set\+Public\+Key (\begin{DoxyParamCaption}\item[{long long}]{n}{, }\item[{long long}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Объявления и описания членов класса находятся в файле:\+\begin{DoxyCompactItemize}
+\item 
+client/\+client/\+\doxymbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\doxysection{functions\+\_\+to\+\_\+server.\+h}
+\hypertarget{functions__to__server_8h_source}{}\label{functions__to__server_8h_source}\index{server/Server/functions\_to\_server.h@{server/Server/functions\_to\_server.h}}
+\doxymbox{\hyperlink{functions__to__server_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FUNCTIONS\_TO\_SERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FUNCTIONS\_TO\_SERVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ ====================\ ОСНОВНЫЕ\ ФУНКЦИИ\ ====================}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00013\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_ac51c20dd340b9cd97589ad9bceb9c93f}{handleRegister}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a9e13d9d25c00969694e5860e18a64f63}{handleAuth}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_ab27c0df47f53ff40361e24d3d81e6527}{handleStats}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ ====================\ ФУНКЦИИ\ ЗАДАЧ\ ====================}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_aa1270761f00030358c560e5557b80313}{handleMD5}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a2e52b96f6b2dfa863794879662390794}{handleSecant}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a78dfd05412adbee008c655a7ed2dc556}{handleCycle}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ ====================\ ФУНКЦИИ\ ДЛЯ\ РАБОТЫ\ С\ ГРАФОМ\ ====================}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a4fa1021501e8ed79ed64470f4b4641ce}{handleAddEdge}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_ae0408268f157dc5056898cf0a6efa3da}{handleRemoveEdge}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a6acffca1f75419bb3143b4f98df0fad0}{handleGetGraph}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_af09843cb9af309116fa05e5b191f3541}{handleSetEdgeWeight}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00087\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a2e2f194e745d96fa90065508d7c63a33}{handleShortest}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a12f059d395b13c3ad8efca085cfea014}{handleGeneticPath}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ ====================\ АДМИНИСТРАТИВНЫЕ\ ФУНКЦИИ\ ====================}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00103\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a4cc26f5aa1d4b553c19248850af3891e}{handleAdminAuth}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00110\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a0908e46d1332eb77464a7ff1cece1cf9}{handleAdminGetUsers}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a89208299ccebb7b620905fe0f3633e82}{handleAdminSetStatus}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ ====================\ RSA\ ФУНКЦИИ\ ====================}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00126\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a699f161b566455fabe85f8ecf391d6fc}{handleRsaPubkey}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00133\ QString\ \doxymbox{\hyperlink{functions__to__server_8h_a30603a9ba9e15899e4ba6ce106a42bb2}{handleRsaEncrypt}}(\textcolor{keyword}{const}\ QString\ \&payload);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FUNCTIONS\_TO\_SERVER\_H}}
+
+\end{DoxyCode}

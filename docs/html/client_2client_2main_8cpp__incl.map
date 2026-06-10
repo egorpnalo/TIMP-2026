@@ -1,0 +1,21 @@
+<map id="client/client/main.cpp" name="client/client/main.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="118,5,263,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="39,80,134,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,34,119,73,116,69,174,31"/>
+<area shape="rect" id="Node000003" href="$client_8h.html" title=" " alt="" coords="159,80,222,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,30,193,65,188,63,189,35"/>
+<area shape="rect" id="Node000007" href="$regandauth_8h.html" title=" " alt="" coords="348,80,444,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="227,30,348,73,343,75,226,35"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,155,75,181"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="166,110,81,150,79,145,163,105"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="99,155,192,181"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="185,106,163,143,159,139,180,109"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="216,155,280,181"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="202,105,231,143,226,142,200,110"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="304,155,376,181"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="389,106,360,145,357,140,384,108"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="400,155,507,181"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="407,105,437,143,432,142,405,110"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="531,155,629,181"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="429,105,536,149,531,149,428,110"/>
+</map>

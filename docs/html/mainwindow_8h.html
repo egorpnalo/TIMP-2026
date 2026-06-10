@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Клиент-серверное приложение по ТиМП: Файл client/client/mainwindow.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Клиент-серверное приложение по ТиМП
+   </div>
+   <div id="projectbrief">Приложение для демонстрации клиент-серверной архитектуры с функционалом: регистрация, авторизация, MD5, метод секущих, работа с графом, RSA шифрование Выполнили: Федотов Егор, Давыденков Степан, Жуковский Кирилл, Токарев Андрей, Степанов Степан</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('mainwindow_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл mainwindow.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;QMainWindow&gt;</code><br />
+<code>#include &lt;QMessageBox&gt;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+<code>#include &lt;QDateTime&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для mainwindow.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="mainwindow_8h__incl.png" border="0" usemap="#aclient_2client_2mainwindow_8h" loading="lazy" alt=""/></div>
+<map name="aclient_2client_2mainwindow_8h" id="aclient_2client_2mainwindow_8h">
+<area shape="rect" title=" " alt="" coords="158,5,332,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,112,107"/>
+<area shape="poly" title=" " alt="" coords="214,35,106,76,104,71,211,30"/>
+<area shape="rect" title=" " alt="" coords="136,80,243,107"/>
+<area shape="poly" title=" " alt="" coords="238,31,210,70,206,66,233,34"/>
+<area shape="rect" title=" " alt="" coords="266,80,336,107"/>
+<area shape="poly" title=" " alt="" coords="256,30,285,68,280,67,254,35"/>
+<area shape="rect" title=" " alt="" coords="360,80,448,107"/>
+<area shape="poly" title=" " alt="" coords="273,30,365,73,359,73,272,35"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="mainwindow_8h__dep__incl.png" border="0" usemap="#aclient_2client_2mainwindow_8hdep" loading="lazy" alt=""/></div>
+<map name="aclient_2client_2mainwindow_8hdep" id="aclient_2client_2mainwindow_8hdep">
+<area shape="rect" title=" " alt="" coords="209,5,382,32"/>
+<area shape="rect" href="moc__mainwindow_8cpp.html" title=" " alt="" coords="5,80,178,139"/>
+<area shape="poly" title=" " alt="" coords="255,38,159,82,157,77,250,40"/>
+<area shape="rect" href="mainwindow_8cpp.html" title=" " alt="" coords="202,96,389,123"/>
+<area shape="poly" title=" " alt="" coords="297,46,298,97,293,94,294,50"/>
+<area shape="rect" href="regandauth_8cpp.html" title=" " alt="" coords="413,96,594,123"/>
+<area shape="poly" title=" " alt="" coords="340,36,476,95,471,96,339,41"/>
+</map>
+</div>
+</div>
+<p><a href="mainwindow_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:LocalRSA" id="r_LocalRSA"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_local_r_s_a.html">LocalRSA</a></td></tr>
+<tr class="memitem:MainWindow" id="r_MainWindow"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_main_window.html">MainWindow</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:Ui" id="r_Ui"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespace_ui.html">Ui</a></td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_db3a54907829b36871118d03417739cd.html">client</a></li><li class="navelem"><a href="dir_5be5e1f9b52b5ce661cebd3f4fe1aae9.html">client</a></li><li class="navelem"><a href="mainwindow_8h.html">mainwindow.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

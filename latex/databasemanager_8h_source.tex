@@ -1,0 +1,28 @@
+\doxysection{databasemanager.\+h}
+\hypertarget{databasemanager_8h_source}{}\label{databasemanager_8h_source}\index{server/DbServer/databasemanager.h@{server/DbServer/databasemanager.h}}
+\doxymbox{\hyperlink{databasemanager_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATABASEMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATABASEMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QSqlDatabase>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }DatabaseManager}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{static}\ DatabaseManager\&\ \doxymbox{\hyperlink{class_database_manager_a4abb527066e28f3928ef45af856e134c}{instance}}();}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_database_manager_a052fd766016df1bf759364b9dadadd6c}{init}}(\textcolor{keyword}{const}\ QString\&\ dbPath\ =\ \textcolor{stringliteral}{"{}Test.db"{}});}
+\DoxyCodeLine{00012\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_database_manager_a5b5432732bc7ab77df4976e05320ef95}{execute}}(\textcolor{keyword}{const}\ QString\&\ sql);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ DatabaseManager();}
+\DoxyCodeLine{00016\ \ \ \ \ \string~DatabaseManager();}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_DISABLE\_COPY(DatabaseManager)}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ ensureOpen()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \ \ \ \ QSqlDatabase\ m\_db;}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATABASEMANAGER\_H}}
+
+\end{DoxyCode}

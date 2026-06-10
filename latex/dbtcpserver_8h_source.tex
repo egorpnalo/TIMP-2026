@@ -1,0 +1,32 @@
+\doxysection{dbtcpserver.\+h}
+\hypertarget{dbtcpserver_8h_source}{}\label{dbtcpserver_8h_source}\index{server/DbServer/dbtcpserver.h@{server/DbServer/dbtcpserver.h}}
+\doxymbox{\hyperlink{dbtcpserver_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DBTCPSERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DBTCPSERVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTcpServer>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QHash>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_db_tcp_server_a2b32e192bf4dc7485ac1f89a107fec40}{DbTcpServer}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_db_tcp_server_a2b32e192bf4dc7485ac1f89a107fec40}{DbTcpServer}}(quint16\ port\ =\ 33334,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00014\ \ \ \ \ \doxymbox{\hyperlink{class_db_tcp_server_a6ad242755f4bcd91f8f4c12e4ad01ea4}{\string~DbTcpServer}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ onNewConnection();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ onReadyRead();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ onClientDisconnected();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ QTcpServer\ *m\_server;}
+\DoxyCodeLine{00023\ \ \ \ \ QHash<QTcpSocket*,\ QByteArray>\ m\_buffers;}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DBTCPSERVER\_H}}
+
+\end{DoxyCode}

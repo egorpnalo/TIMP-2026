@@ -1,0 +1,9 @@
+<map id="client/client/regandauth.h" name="client/client/regandauth.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="72,5,238,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,78,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,32,76,74,73,69,132,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="101,80,208,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,31,157,66,152,63,153,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="233,80,330,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,30,249,72,244,72,176,35"/>
+</map>
