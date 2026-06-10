@@ -1,0 +1,61 @@
+\doxysection{client.\+h}
+\hypertarget{client_8h_source}{}\label{client_8h_source}\index{client/client/client.h@{client/client/client.h}}
+\doxymbox{\hyperlink{client_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CLIENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CLIENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }Client\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{static}\ Client*\ p\_instance;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }ClientDestroyer\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ Client\ *p;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_client_a05c459cf1cda6c12f09e54acad109694}{ClientDestroyer}}()\ :\ p(\textcolor{keyword}{nullptr})\ \{\}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \string~ClientDestroyer()\ \{\ \textcolor{keyword}{delete}\ p;\ \}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ init(Client\ *ptr)\ \{\ p\ =\ ptr;\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ ClientDestroyer\ destroyer;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ Client(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00022\ \ \ \ \ Client(\textcolor{keyword}{const}\ Client\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00023\ \ \ \ \ Client\&\ operator=(\textcolor{keyword}{const}\ Client\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }ClientDestroyer;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ Client*\ \doxymbox{\hyperlink{class_client_ae60032c9d89d51ffa76963e4cd773f76}{getInstance}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \doxymbox{\hyperlink{class_client_af96d672ca01fa070cc9489614dab4194}{\string~Client}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_client_aa4f80daec32150054407918056f1b06a}{sendMsgToServer}}(\textcolor{keyword}{const}\ QString\ \&msg);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_client_adb70f8af5f71b5e09c4a0a8f6da3912c}{isConnected}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_client_a2db82ca5ab5b9f29d401b0ab46d8008e}{waitForConnection}}(\textcolor{keywordtype}{int}\ msecs\ =\ 3000);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_client_a80d764a2f39c018b44ca3209dc06fffc}{setAdmin}}(\textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_client_a24c69a15bd95ce7babe2c8956cf4c9a6}{isAdmin}});}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_client_a24c69a15bd95ce7babe2c8956cf4c9a6}{isAdmin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ signals:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_client_abaa9637e0b90b99295f8f85eea12c0f1}{msgFromServer}}(\textcolor{keyword}{const}\ QString\ \&msg);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_client_abb29601819abc64eea8ab1d3c4d43854}{connectionStateChanged}}(\textcolor{keywordtype}{bool}\ connected);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_client_a03986243d5a203a9e248ea6ae92d81e9}{adminStatusChanged}}(\textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_client_a24c69a15bd95ce7babe2c8956cf4c9a6}{isAdmin}});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ slotServerRead();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ slotConnected();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ slotDisconnected();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ slotError(QAbstractSocket::SocketError\ error);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ \ \ QTcpSocket\ *mTcpSocket;}
+\DoxyCodeLine{00050\ \ \ \ \ QTimer\ *m\_reconnectTimer;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_reconnectAttempts\ =\ 0;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isAdmin\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CLIENT\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,201 @@
+\doxysection{mainwindow.\+h}
+\hypertarget{mainwindow_8h_source}{}\label{mainwindow_8h_source}\index{client/client/mainwindow.h@{client/client/mainwindow.h}}
+\doxymbox{\hyperlink{mainwindow_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QDateTime>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ ====================\ ЛОКАЛЬНЫЙ\ RSA\ ДЛЯ\ ДЕМОНСТРАЦИИ\ ====================}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_local_r_s_a_a0d99392cba08b0455e55cbd13780d30f}{LocalRSA}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ n,\ e,\ d;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ modPow(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ base,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ exp,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ mod)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ result\ =\ 1;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ base\ =\ base\ \%\ mod;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (exp\ >\ 0)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (exp\ \&\ 1)\ result\ =\ (result\ *\ base)\ \%\ mod;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ base\ =\ (base\ *\ base)\ \%\ mod;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ exp\ >>=\ 1;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ gcd(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ a,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ b)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (b\ !=\ 0)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ t\ =\ b;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ b\ =\ a\ \%\ b;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ t;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ modInverse(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ a,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ m)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ m0\ =\ m,\ t,\ q;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ x0\ =\ 0,\ x1\ =\ 1;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\ ==\ 1)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (a\ >\ 1)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ q\ =\ a\ /\ m;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ t\ =\ m;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ m\ =\ a\ \%\ m;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ a\ =\ t;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ t\ =\ x0;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ x0\ =\ x1\ -\/\ q\ *\ x0;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ x1\ =\ t;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x1\ <\ 0)\ x1\ +=\ m0;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x1;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPrime(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ num)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (num\ <\ 2)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (num\ ==\ 2)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (num\ \%\ 2\ ==\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ i\ =\ 3;\ i\ *\ i\ <=\ num;\ i\ +=\ 2)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (num\ \%\ i\ ==\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ generatePrime(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ min,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ max)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ seed\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(QDateTime::currentMSecsSinceEpoch());}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ range\ =\ max\ -\/\ min\ +\ 1;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ num;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ seed\ =\ (seed\ *\ 1103515245\ +\ 12345)\ \&\ 0x7fffffff;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ num\ =\ min\ +\ (seed\ \%\ range);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (!isPrime(num));}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ num;}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \ \ \doxymbox{\hyperlink{class_local_r_s_a_a0d99392cba08b0455e55cbd13780d30f}{LocalRSA}}()\ :\ n(0),\ e(0),\ d(0)\ \{\}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_local_r_s_a_a03298f6079bc290fd9ef90ebff125690}{generateKeys}}()\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ p\ =\ generatePrime(50,\ 100);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ q\ =\ generatePrime(50,\ 100);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ n\ =\ p\ *\ q;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ phi\ =\ (p\ -\/\ 1)\ *\ (q\ -\/\ 1);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ e\ =\ 17;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (gcd(e,\ phi)\ !=\ 1)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ e++;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ d\ =\ modInverse(e,\ phi);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}RSA\ Keys\ generated:"{}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}n="{}}\ <<\ n;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}e="{}}\ <<\ e;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}d="{}}\ <<\ d;}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_local_r_s_a_a528b9e8d45d0e5f17a3638c397f9c659}{setPublicKey}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ n,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ e)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ this-\/>n\ =\ n;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ this-\/>e\ =\ e;}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_local_r_s_a_a0b5689f8e23bc7a7dd397264f85c757c}{setPrivateKey}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ n,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ d)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ this-\/>n\ =\ n;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ this-\/>d\ =\ d;}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{class_local_r_s_a_af95bdfb795171b4b1fa61b73ee409445}{getN}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ n;\ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{class_local_r_s_a_a7e6461ded9c959b39f545963839a39fd}{getE}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ e;\ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{class_local_r_s_a_a904430b9d802814ddf9ec1a899608634}{getD}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ d;\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_local_r_s_a_a2c7e7322fb3b3f48c9597656db5c9748}{hasPublicKey}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ n\ >\ 0\ \&\&\ e\ >\ 0;\ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_local_r_s_a_a9f1f64b917cb1ef8c5cbd64aae745461}{hasPrivateKey}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ n\ >\ 0\ \&\&\ d\ >\ 0;\ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{class_local_r_s_a_a39834cea038b956b50177c683772a1b3}{encrypt}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ message)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ modPow(message,\ e,\ n);}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \doxymbox{\hyperlink{class_local_r_s_a_a2df0d3f72afdc46982980c7a3b86a69c}{decrypt}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ cipher)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ modPow(cipher,\ d,\ n);}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_local_r_s_a_a2d2ea1c3b4439d45fbf4b762fccfd137}{encryptString}}(\textcolor{keyword}{const}\ QString\ \&plain)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\doxymbox{\hyperlink{class_local_r_s_a_a2c7e7322fb3b3f48c9597656db5c9748}{hasPublicKey}}())\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ERROR:\ No\ public\ key"{}};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ QStringList\ encrypted;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (QChar\ ch\ :\ plain)\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ m\ =\ ch.unicode();}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ c\ =\ \doxymbox{\hyperlink{class_local_r_s_a_a39834cea038b956b50177c683772a1b3}{encrypt}}(m);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ encrypted\ <<\ QString::number(c);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ encrypted.join(\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_local_r_s_a_ab1bd769171a684d99bf3f8e5bc306e6a}{decryptString}}(\textcolor{keyword}{const}\ QString\ \&cipher)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\doxymbox{\hyperlink{class_local_r_s_a_a9f1f64b917cb1ef8c5cbd64aae745461}{hasPrivateKey}}())\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ERROR:\ No\ private\ key"{}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ QStringList\ parts\ =\ cipher.split(\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ QString\ result;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ QString\ \&part\ :\ parts)\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ok;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ c\ =\ part.toLongLong(\&ok);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ok)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ m\ =\ \doxymbox{\hyperlink{class_local_r_s_a_a2df0d3f72afdc46982980c7a3b86a69c}{decrypt}}(c);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.append(\textcolor{keyword}{static\_cast<}QChar\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char16\_t}\textcolor{keyword}{>}(m)));}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00153\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_ui_1_1_main_window}{MainWindow}};}
+\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00157\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00162\ \ \ \ \ \doxymbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_main_window_a86cffa731a09f522613e0aec7ab6efb4}{updateAdminUI}}(\textcolor{keywordtype}{bool}\ isAdmin);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ onServerResponse(\textcolor{keyword}{const}\ QString\ \&response);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//\ Слоты\ для\ существующих\ кнопок}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_md5Button\_clicked();}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_secantButton\_clicked();}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_cycleButton\_clicked();}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_adminButton\_clicked();}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_backButton\_clicked();}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{//\ Слоты\ для\ работы\ с\ графом}}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_refreshGraphButton\_clicked();}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_addEdgeConfirmButton\_clicked();}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_removeEdgeConfirmButton\_clicked();}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_setWeightButton\_clicked();}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_dijkstraButton\_clicked();}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_geneticButton\_clicked();}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_applyGeneticParamsButton\_clicked();}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{comment}{//\ Слоты\ для\ RSA\ демонстрации}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_generateKeysButton\_clicked();}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_encryptButton\_clicked();}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_decryptButton\_clicked();}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00191\ \ \ \ \ \doxymbox{\hyperlink{class_ui_1_1_main_window}{Ui::MainWindow}}\ *ui;}
+\DoxyCodeLine{00192\ \ \ \ \ \doxymbox{\hyperlink{class_local_r_s_a}{LocalRSA}}\ localRSA;}
+\DoxyCodeLine{00193\ \};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}

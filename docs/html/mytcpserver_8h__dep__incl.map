@@ -1,0 +1,9 @@
+<map id="server/Server/mytcpserver.h" name="server/Server/mytcpserver.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="174,5,361,32"/>
+<area shape="rect" id="Node000002" href="$moc__mytcpserver_8cpp.html" title=" " alt="" coords="5,80,178,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,38,150,82,147,77,226,40"/>
+<area shape="rect" id="Node000003" href="$main__serv_8cpp.html" title=" " alt="" coords="202,88,333,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,46,270,89,265,86,266,50"/>
+<area shape="rect" id="Node000004" href="$mytcpserver_8cpp.html" title=" " alt="" coords="357,96,557,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="309,36,432,95,427,96,308,42"/>
+</map>

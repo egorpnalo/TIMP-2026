@@ -1,0 +1,79 @@
+\doxysection{Структура Graph}
+\hypertarget{struct_graph}{}\label{struct_graph}\index{Graph@{Graph}}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{struct_graph_a12adc706cb072491c174defe3952cf75}{add\+Edge}} (int u, int v, int weight=1)
+\item 
+void \doxymbox{\hyperlink{struct_graph_ac39b62d65d6add31ed4f6d7d2015a0b2}{remove\+Edge}} (int u, int v)
+\item 
+bool \doxymbox{\hyperlink{struct_graph_ae69ac4d2194ed9acbe817ac70d89896d}{has\+Edge}} (int u, int v) const
+\item 
+int \doxymbox{\hyperlink{struct_graph_a9734db7b7c59bc5c85d020307d86a9ba}{get\+Weight}} (int u, int v) const
+\item 
+QVector$<$ int $>$ \doxymbox{\hyperlink{struct_graph_a76bf8dc9958befa71766f02376bb2df9}{get\+Neighbors}} (int u) const
+\item 
+QString \doxymbox{\hyperlink{struct_graph_a973cc8e07dcf550bd1a4ac63dcbd37ba}{get\+Edges\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+QHash$<$ int, QVector$<$ QPair$<$ int, int $>$ $>$ $>$ \doxymbox{\hyperlink{struct_graph_a3e43e16e778249e0ee4535a13f7c1438}{adj}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{struct_graph_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{struct_graph_a12adc706cb072491c174defe3952cf75}\index{Graph@{Graph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily \label{struct_graph_a12adc706cb072491c174defe3952cf75} 
+void Graph::\+add\+Edge (\begin{DoxyParamCaption}\item[{int}]{u}{, }\item[{int}]{v}{, }\item[{int}]{weight}{ = {\ttfamily 1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_graph_a973cc8e07dcf550bd1a4ac63dcbd37ba}\index{Graph@{Graph}!getEdgesString@{getEdgesString}}
+\index{getEdgesString@{getEdgesString}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getEdgesString()}{getEdgesString()}}
+{\footnotesize\ttfamily \label{struct_graph_a973cc8e07dcf550bd1a4ac63dcbd37ba} 
+QString Graph::\+get\+Edges\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_graph_a76bf8dc9958befa71766f02376bb2df9}\index{Graph@{Graph}!getNeighbors@{getNeighbors}}
+\index{getNeighbors@{getNeighbors}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getNeighbors()}{getNeighbors()}}
+{\footnotesize\ttfamily \label{struct_graph_a76bf8dc9958befa71766f02376bb2df9} 
+QVector$<$ int $>$ Graph::\+get\+Neighbors (\begin{DoxyParamCaption}\item[{int}]{u}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_graph_a9734db7b7c59bc5c85d020307d86a9ba}\index{Graph@{Graph}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getWeight()}{getWeight()}}
+{\footnotesize\ttfamily \label{struct_graph_a9734db7b7c59bc5c85d020307d86a9ba} 
+int Graph::\+get\+Weight (\begin{DoxyParamCaption}\item[{int}]{u}{, }\item[{int}]{v}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_graph_ae69ac4d2194ed9acbe817ac70d89896d}\index{Graph@{Graph}!hasEdge@{hasEdge}}
+\index{hasEdge@{hasEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{hasEdge()}{hasEdge()}}
+{\footnotesize\ttfamily \label{struct_graph_ae69ac4d2194ed9acbe817ac70d89896d} 
+bool Graph::\+has\+Edge (\begin{DoxyParamCaption}\item[{int}]{u}{, }\item[{int}]{v}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_graph_ac39b62d65d6add31ed4f6d7d2015a0b2}\index{Graph@{Graph}!removeEdge@{removeEdge}}
+\index{removeEdge@{removeEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{removeEdge()}{removeEdge()}}
+{\footnotesize\ttfamily \label{struct_graph_ac39b62d65d6add31ed4f6d7d2015a0b2} 
+void Graph::\+remove\+Edge (\begin{DoxyParamCaption}\item[{int}]{u}{, }\item[{int}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_graph_doc-variable-members}
+\doxysubsection{Данные класса}
+\Hypertarget{struct_graph_a3e43e16e778249e0ee4535a13f7c1438}\index{Graph@{Graph}!adj@{adj}}
+\index{adj@{adj}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{adj}{adj}}
+{\footnotesize\ttfamily \label{struct_graph_a3e43e16e778249e0ee4535a13f7c1438} 
+QHash$<$int, QVector$<$QPair$<$int, int$>$ $>$ $>$ Graph::\+adj}
+
+
+
+Объявления и описания членов структуры находятся в файле:\+\begin{DoxyCompactItemize}
+\item 
+server/\+\+Server/\+\doxymbox{\hyperlink{functions__to__server_8cpp}{functions\+\_\+to\+\_\+server.\+cpp}}\end{DoxyCompactItemize}

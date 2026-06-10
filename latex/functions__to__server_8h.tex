@@ -1,0 +1,367 @@
+\doxysection{Файл server/\+\+Server/\+functions\+\_\+to\+\_\+server.h}
+\hypertarget{functions__to__server_8h}{}\label{functions__to__server_8h}\index{server/Server/functions\_to\_server.h@{server/Server/functions\_to\_server.h}}
+{\ttfamily \+\#include $<$QString$>$}\newline
+Граф включаемых заголовочных файлов для functions\+\_\+to\+\_\+server.\+h:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{functions__to__server_8h__incl}
+\end{center}
+\end{figure}
+Граф файлов, в которые включается этот файл:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions__to__server_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_ac51c20dd340b9cd97589ad9bceb9c93f}{handle\+Register}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Обрабатывает регистрацию нового пользователя \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a9e13d9d25c00969694e5860e18a64f63}{handle\+Auth}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Обрабатывает авторизацию пользователя \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_ab27c0df47f53ff40361e24d3d81e6527}{handle\+Stats}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Возвращает количество зарегистрированных пользователей \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_aa1270761f00030358c560e5557b80313}{handle\+MD5}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Вычисляет MD5 хэш входной строки (собственная реализация). \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a2e52b96f6b2dfa863794879662390794}{handle\+Secant}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Вычисляет квадратный корень методом секущих \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a78dfd05412adbee008c655a7ed2dc556}{handle\+Cycle}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли последовательность вершин циклом в графе \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a4fa1021501e8ed79ed64470f4b4641ce}{handle\+Add\+Edge}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Добавляет новое ребро в граф \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_ae0408268f157dc5056898cf0a6efa3da}{handle\+Remove\+Edge}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Удаляет ребро из графа \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a6acffca1f75419bb3143b4f98df0fad0}{handle\+Get\+Graph}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Возвращает список всех рёбер графа \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_af09843cb9af309116fa05e5b191f3541}{handle\+Set\+Edge\+Weight}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Изменяет вес существующего ребра \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a2e2f194e745d96fa90065508d7c63a33}{handle\+Shortest}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Находит кратчайший путь между вершинами (алгоритм Дейкстры). \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a12f059d395b13c3ad8efca085cfea014}{handle\+Genetic\+Path}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Находит кратчайший путь с помощью генетического алгоритма \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a4cc26f5aa1d4b553c19248850af3891e}{handle\+Admin\+Auth}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Аутентификация администратора \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a0908e46d1332eb77464a7ff1cece1cf9}{handle\+Admin\+Get\+Users}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Возвращает список всех пользователей (только для администратора). \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a89208299ccebb7b620905fe0f3633e82}{handle\+Admin\+Set\+Status}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Изменяет статус пользователя (только для администратора). \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a699f161b566455fabe85f8ecf391d6fc}{handle\+Rsa\+Pubkey}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Возвращает публичный ключ RSA. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{functions__to__server_8h_a30603a9ba9e15899e4ba6ce106a42bb2}{handle\+Rsa\+Encrypt}} (const QString \&payload)
+\begin{DoxyCompactList}\small\item\em Расшифровывает сообщение, зашифрованное публичным ключом \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{functions__to__server_8h_doc-func-members}
+\doxysubsection{Функции}
+\Hypertarget{functions__to__server_8h_a4fa1021501e8ed79ed64470f4b4641ce}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleAddEdge@{handleAddEdge}}
+\index{handleAddEdge@{handleAddEdge}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleAddEdge()}{handleAddEdge()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a4fa1021501e8ed79ed64470f4b4641ce} 
+QString handle\+Add\+Edge (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Добавляет новое ребро в граф 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Формат:\+ "{}u,v"{} или "{}u,v,weight"{} (например, "{}5,6"{} или "{}5,6,3"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+GRAPH\+\_\+\+OK:\+ Edge added with weight N"{} или "{}\+GRAPH\+\_\+\+ERR:\+ ..."{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_a4cc26f5aa1d4b553c19248850af3891e}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleAdminAuth@{handleAdminAuth}}
+\index{handleAdminAuth@{handleAdminAuth}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleAdminAuth()}{handleAdminAuth()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a4cc26f5aa1d4b553c19248850af3891e} 
+QString handle\+Admin\+Auth (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Аутентификация администратора 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Формат:\+ "{}login,password"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+ADMIN\+\_\+\+AUTH\+\_\+\+OK:\+ Access granted"{} или "{}\+ADMIN\+\_\+\+AUTH\+\_\+\+ERR:\+ ..."{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_a0908e46d1332eb77464a7ff1cece1cf9}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleAdminGetUsers@{handleAdminGetUsers}}
+\index{handleAdminGetUsers@{handleAdminGetUsers}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleAdminGetUsers()}{handleAdminGetUsers()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a0908e46d1332eb77464a7ff1cece1cf9} 
+QString handle\+Admin\+Get\+Users (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Возвращает список всех пользователей (только для администратора). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & (не используется) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+ADMIN\+\_\+\+USERS:\+ \{список login \texorpdfstring{$\vert$}{|} status\}"{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_a89208299ccebb7b620905fe0f3633e82}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleAdminSetStatus@{handleAdminSetStatus}}
+\index{handleAdminSetStatus@{handleAdminSetStatus}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleAdminSetStatus()}{handleAdminSetStatus()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a89208299ccebb7b620905fe0f3633e82} 
+QString handle\+Admin\+Set\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Изменяет статус пользователя (только для администратора). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Формат:\+ "{}login,status"{} (status:\+ online, offline, banned, admin) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+ADMIN\+\_\+\+OK:\+ Status updated for user \{login\}"{} или "{}\+ADMIN\+\_\+\+ERR:\+ ..."{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_a9e13d9d25c00969694e5860e18a64f63}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleAuth@{handleAuth}}
+\index{handleAuth@{handleAuth}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleAuth()}{handleAuth()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a9e13d9d25c00969694e5860e18a64f63} 
+QString handle\+Auth (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Обрабатывает авторизацию пользователя 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Строка формата "{}login,password"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+AUTH\+\_\+\+OK:\+ Welcome \{login\}"{} или "{}\+AUTH\+\_\+\+ERR:\+ ..."{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_a78dfd05412adbee008c655a7ed2dc556}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleCycle@{handleCycle}}
+\index{handleCycle@{handleCycle}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleCycle()}{handleCycle()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a78dfd05412adbee008c655a7ed2dc556} 
+QString handle\+Cycle (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли последовательность вершин циклом в графе 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Последовательность вершин через запятую (например, "{}1,2,3,1"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+CYCLE\+\_\+\+OK:\+ Valid cycle with N edges"{} или "{}\+CYCLE\+\_\+\+ERR:\+ ..."{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_a12f059d395b13c3ad8efca085cfea014}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleGeneticPath@{handleGeneticPath}}
+\index{handleGeneticPath@{handleGeneticPath}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleGeneticPath()}{handleGeneticPath()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a12f059d395b13c3ad8efca085cfea014} 
+QString handle\+Genetic\+Path (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Находит кратчайший путь с помощью генетического алгоритма 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Формат:\+ "{}s,t"{} (например, "{}1,4"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+GENETIC\+\_\+\+RESULT:\+ Path from s to t (weight=\+W):\+ path"{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_a6acffca1f75419bb3143b4f98df0fad0}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleGetGraph@{handleGetGraph}}
+\index{handleGetGraph@{handleGetGraph}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleGetGraph()}{handleGetGraph()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a6acffca1f75419bb3143b4f98df0fad0} 
+QString handle\+Get\+Graph (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Возвращает список всех рёбер графа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & (не используется) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+GRAPH\+\_\+\+EDGES:\+ \{список рёбер с весами\}"{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_aa1270761f00030358c560e5557b80313}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleMD5@{handleMD5}}
+\index{handleMD5@{handleMD5}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleMD5()}{handleMD5()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_aa1270761f00030358c560e5557b80313} 
+QString handle\+MD5 (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Вычисляет MD5 хэш входной строки (собственная реализация). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Строка для хэширования \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+MD5:\+ \{32-\/символьный хэш\}"{} или "{}\+MD5\+\_\+\+ERR:\+ ..."{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_ac51c20dd340b9cd97589ad9bceb9c93f}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleRegister@{handleRegister}}
+\index{handleRegister@{handleRegister}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleRegister()}{handleRegister()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_ac51c20dd340b9cd97589ad9bceb9c93f} 
+QString handle\+Register (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Обрабатывает регистрацию нового пользователя 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Строка формата "{}login,password"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+REGISTER\+\_\+\+OK:\+ User created successfully"{} или "{}\+REGISTER\+\_\+\+ERR:\+ ..."{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_ae0408268f157dc5056898cf0a6efa3da}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleRemoveEdge@{handleRemoveEdge}}
+\index{handleRemoveEdge@{handleRemoveEdge}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleRemoveEdge()}{handleRemoveEdge()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_ae0408268f157dc5056898cf0a6efa3da} 
+QString handle\+Remove\+Edge (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Удаляет ребро из графа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Формат:\+ "{}u,v"{} (например, "{}5,6"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+GRAPH\+\_\+\+OK:\+ Edge removed successfully"{} или "{}\+GRAPH\+\_\+\+ERR:\+ ..."{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_a30603a9ba9e15899e4ba6ce106a42bb2}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleRsaEncrypt@{handleRsaEncrypt}}
+\index{handleRsaEncrypt@{handleRsaEncrypt}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleRsaEncrypt()}{handleRsaEncrypt()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a30603a9ba9e15899e4ba6ce106a42bb2} 
+QString handle\+Rsa\+Encrypt (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Расшифровывает сообщение, зашифрованное публичным ключом 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Зашифрованное сообщение в base64 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+RSA\+\_\+\+DECRYPT:\+\{расшифрованное сообщение\}"{} или "{}\+RSA\+\_\+\+ERR:\+ ..."{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_a699f161b566455fabe85f8ecf391d6fc}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleRsaPubkey@{handleRsaPubkey}}
+\index{handleRsaPubkey@{handleRsaPubkey}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleRsaPubkey()}{handleRsaPubkey()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a699f161b566455fabe85f8ecf391d6fc} 
+QString handle\+Rsa\+Pubkey (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Возвращает публичный ключ RSA. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & (не используется) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+RSA\+\_\+\+PUBKEY:\+n,e"{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_a2e52b96f6b2dfa863794879662390794}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleSecant@{handleSecant}}
+\index{handleSecant@{handleSecant}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleSecant()}{handleSecant()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a2e52b96f6b2dfa863794879662390794} 
+QString handle\+Secant (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Вычисляет квадратный корень методом секущих 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Число в виде строки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+SECANT\+\_\+\+RESULT:\+ \{значение\}"{} или "{}\+SECANT\+\_\+\+ERR:\+ ..."{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_af09843cb9af309116fa05e5b191f3541}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleSetEdgeWeight@{handleSetEdgeWeight}}
+\index{handleSetEdgeWeight@{handleSetEdgeWeight}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleSetEdgeWeight()}{handleSetEdgeWeight()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_af09843cb9af309116fa05e5b191f3541} 
+QString handle\+Set\+Edge\+Weight (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Изменяет вес существующего ребра 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Формат:\+ "{}u,v,weight"{} (например, "{}1,2,5"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+GRAPH\+\_\+\+OK:\+ Edge weight changed"{} или "{}\+GRAPH\+\_\+\+ERR:\+ ..."{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_a2e2f194e745d96fa90065508d7c63a33}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleShortest@{handleShortest}}
+\index{handleShortest@{handleShortest}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleShortest()}{handleShortest()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_a2e2f194e745d96fa90065508d7c63a33} 
+QString handle\+Shortest (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Находит кратчайший путь между вершинами (алгоритм Дейкстры). 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & Формат:\+ "{}s,t"{} (например, "{}1,4"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+GRAPH:\+ Shortest path from s to t (total weight=\+W):\+ path"{} 
+\end{DoxyReturn}
+\Hypertarget{functions__to__server_8h_ab27c0df47f53ff40361e24d3d81e6527}\index{functions\_to\_server.h@{functions\_to\_server.h}!handleStats@{handleStats}}
+\index{handleStats@{handleStats}!functions\_to\_server.h@{functions\_to\_server.h}}
+\doxysubsubsection{\texorpdfstring{handleStats()}{handleStats()}}
+{\footnotesize\ttfamily \label{functions__to__server_8h_ab27c0df47f53ff40361e24d3d81e6527} 
+QString handle\+Stats (\begin{DoxyParamCaption}\item[{const QString \&}]{payload}{}\end{DoxyParamCaption})}
+
+
+
+Возвращает количество зарегистрированных пользователей 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em payload} & (не используется) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+"{}\+STATS:\+ Total users = N"{} 
+\end{DoxyReturn}

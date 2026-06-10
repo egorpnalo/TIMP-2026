@@ -1,0 +1,13 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,107,75,133"/>
+<area shape="rect" id="Node000001" href="$class_client.html" title=" " alt="" coords="165,5,220,32"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="61,94,88,67,121,42,166,24,163,28,124,46,92,71,65,97"/>
+<area shape="rect" id="Node000002" href="$class_db_tcp_server.html" title=" " alt="" coords="144,56,241,83"/>
+<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="88,101,151,81,148,85,91,106"/>
+<area shape="rect" id="Node000003" href="$class_func_for_server___test.html" title=" " alt="" coords="123,107,262,133"/>
+<area shape="poly" id="edge4_Node000000_Node000003" title=" " alt="" coords="90,117,125,119,120,121,91,123"/>
+<area shape="rect" id="Node000004" href="$class_my_tcp_server.html" title=" " alt="" coords="143,157,242,184"/>
+<area shape="poly" id="edge5_Node000000_Node000004" title=" " alt="" coords="90,134,152,155,147,158,89,139"/>
+<area shape="rect" id="Node000005" href="$class_unit_tests.html" title=" " alt="" coords="154,208,231,235"/>
+<area shape="poly" id="edge6_Node000000_Node000005" title=" " alt="" coords="63,142,92,169,124,194,156,210,151,210,121,198,88,173,62,147"/>
+</map>

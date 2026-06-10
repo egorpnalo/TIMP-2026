@@ -31,9 +31,13 @@ public:
     bool isConnected() const;
     bool waitForConnection(int msecs = 3000);
 
+    void setAdmin(bool isAdmin);
+    bool isAdmin() const;
+
 signals:
     void msgFromServer(const QString &msg);
     void connectionStateChanged(bool connected);
+    void adminStatusChanged(bool isAdmin);
 
 private slots:
     void slotServerRead();
@@ -45,7 +49,7 @@ private:
     QTcpSocket *mTcpSocket;
     QTimer *m_reconnectTimer;
     int m_reconnectAttempts = 0;
-    bool m_isConnected = false;
+    bool m_isAdmin = false;
 };
 
 #endif // CLIENT_H

@@ -1,0 +1,148 @@
+\doxysection{Класс Client}
+\hypertarget{class_client}{}\label{class_client}\index{Client@{Client}}
+
+
+{\ttfamily \+\#include $<$client.\+h$>$}
+
+
+
+Граф наследования:\+Client:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=132pt]{class_client__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Граф связей класса Client:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=132pt]{class_client__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Сигналы}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_client_abaa9637e0b90b99295f8f85eea12c0f1}{msg\+From\+Server}} (const QString \&msg)
+\item 
+void \doxymbox{\hyperlink{class_client_abb29601819abc64eea8ab1d3c4d43854}{connection\+State\+Changed}} (bool connected)
+\item 
+void \doxymbox{\hyperlink{class_client_a03986243d5a203a9e248ea6ae92d81e9}{admin\+Status\+Changed}} (bool \doxymbox{\hyperlink{class_client_a24c69a15bd95ce7babe2c8956cf4c9a6}{is\+Admin}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_client_af96d672ca01fa070cc9489614dab4194}{\texorpdfstring{$\sim$}{\string~}\+Client}} () override
+\item 
+void \doxymbox{\hyperlink{class_client_aa4f80daec32150054407918056f1b06a}{send\+Msg\+To\+Server}} (const QString \&msg)
+\item 
+bool \doxymbox{\hyperlink{class_client_adb70f8af5f71b5e09c4a0a8f6da3912c}{is\+Connected}} () const
+\item 
+bool \doxymbox{\hyperlink{class_client_a2db82ca5ab5b9f29d401b0ab46d8008e}{wait\+For\+Connection}} (int msecs=3000)
+\item 
+void \doxymbox{\hyperlink{class_client_a80d764a2f39c018b44ca3209dc06fffc}{set\+Admin}} (bool \doxymbox{\hyperlink{class_client_a24c69a15bd95ce7babe2c8956cf4c9a6}{is\+Admin}})
+\item 
+bool \doxymbox{\hyperlink{class_client_a24c69a15bd95ce7babe2c8956cf4c9a6}{is\+Admin}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_client}{Client}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_client_ae60032c9d89d51ffa76963e4cd773f76}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Друзья}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_client_a05c459cf1cda6c12f09e54acad109694}{Client\+Destroyer}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_client_doc-constructors}
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{class_client_af96d672ca01fa070cc9489614dab4194}\index{Client@{Client}!````~Client@{\texorpdfstring{$\sim$}{\string~}Client}}
+\index{````~Client@{\texorpdfstring{$\sim$}{\string~}Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Client()}{\string~Client()}}
+{\footnotesize\ttfamily \label{class_client_af96d672ca01fa070cc9489614dab4194} 
+Client::\+\texorpdfstring{$\sim$}{\string~}\+Client (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_client_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{class_client_a03986243d5a203a9e248ea6ae92d81e9}\index{Client@{Client}!adminStatusChanged@{adminStatusChanged}}
+\index{adminStatusChanged@{adminStatusChanged}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{adminStatusChanged}{adminStatusChanged}}
+{\footnotesize\ttfamily \label{class_client_a03986243d5a203a9e248ea6ae92d81e9} 
+void Client::\+admin\+Status\+Changed (\begin{DoxyParamCaption}\item[{bool}]{is\+Admin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_client_abb29601819abc64eea8ab1d3c4d43854}\index{Client@{Client}!connectionStateChanged@{connectionStateChanged}}
+\index{connectionStateChanged@{connectionStateChanged}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{connectionStateChanged}{connectionStateChanged}}
+{\footnotesize\ttfamily \label{class_client_abb29601819abc64eea8ab1d3c4d43854} 
+void Client::\+connection\+State\+Changed (\begin{DoxyParamCaption}\item[{bool}]{connected}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_client_ae60032c9d89d51ffa76963e4cd773f76}\index{Client@{Client}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_client_ae60032c9d89d51ffa76963e4cd773f76} 
+\doxymbox{\hyperlink{class_client}{Client}} \texorpdfstring{$\ast$}{*} Client::\+get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_client_a24c69a15bd95ce7babe2c8956cf4c9a6}\index{Client@{Client}!isAdmin@{isAdmin}}
+\index{isAdmin@{isAdmin}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{isAdmin()}{isAdmin()}}
+{\footnotesize\ttfamily \label{class_client_a24c69a15bd95ce7babe2c8956cf4c9a6} 
+bool Client::\+is\+Admin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_client_adb70f8af5f71b5e09c4a0a8f6da3912c}\index{Client@{Client}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily \label{class_client_adb70f8af5f71b5e09c4a0a8f6da3912c} 
+bool Client::\+is\+Connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_client_abaa9637e0b90b99295f8f85eea12c0f1}\index{Client@{Client}!msgFromServer@{msgFromServer}}
+\index{msgFromServer@{msgFromServer}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{msgFromServer}{msgFromServer}}
+{\footnotesize\ttfamily \label{class_client_abaa9637e0b90b99295f8f85eea12c0f1} 
+void Client::\+msg\+From\+Server (\begin{DoxyParamCaption}\item[{const QString \&}]{msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_client_aa4f80daec32150054407918056f1b06a}\index{Client@{Client}!sendMsgToServer@{sendMsgToServer}}
+\index{sendMsgToServer@{sendMsgToServer}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{sendMsgToServer()}{sendMsgToServer()}}
+{\footnotesize\ttfamily \label{class_client_aa4f80daec32150054407918056f1b06a} 
+void Client::\+send\+Msg\+To\+Server (\begin{DoxyParamCaption}\item[{const QString \&}]{msg}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_client_a80d764a2f39c018b44ca3209dc06fffc}\index{Client@{Client}!setAdmin@{setAdmin}}
+\index{setAdmin@{setAdmin}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{setAdmin()}{setAdmin()}}
+{\footnotesize\ttfamily \label{class_client_a80d764a2f39c018b44ca3209dc06fffc} 
+void Client::\+set\+Admin (\begin{DoxyParamCaption}\item[{bool}]{is\+Admin}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_client_a2db82ca5ab5b9f29d401b0ab46d8008e}\index{Client@{Client}!waitForConnection@{waitForConnection}}
+\index{waitForConnection@{waitForConnection}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{waitForConnection()}{waitForConnection()}}
+{\footnotesize\ttfamily \label{class_client_a2db82ca5ab5b9f29d401b0ab46d8008e} 
+bool Client::\+wait\+For\+Connection (\begin{DoxyParamCaption}\item[{int}]{msecs}{ = {\ttfamily 3000}}\end{DoxyParamCaption})}
+
+
+
+\label{doc-related-members}
+\Hypertarget{class_client_doc-related-members}
+\doxysubsection{Друзья класса и относящимся к классу обозначения}
+\Hypertarget{class_client_a05c459cf1cda6c12f09e54acad109694}\index{Client@{Client}!ClientDestroyer@{ClientDestroyer}}
+\index{ClientDestroyer@{ClientDestroyer}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{ClientDestroyer}{ClientDestroyer}}
+{\footnotesize\ttfamily \label{class_client_a05c459cf1cda6c12f09e54acad109694} 
+friend class Client\+Destroyer\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
+\item 
+client/\+client/\+\doxymbox{\hyperlink{client_8h}{client.\+h}}\item 
+client/\+client/\+build/\+\+WORKING-\/\+Debug/\+debug/\+\doxymbox{\hyperlink{moc__client_8cpp}{moc\+\_\+client.\+cpp}}\item 
+client/\+client/\+\doxymbox{\hyperlink{client_8cpp}{client.\+cpp}}\end{DoxyCompactItemize}

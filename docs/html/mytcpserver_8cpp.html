@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Клиент-серверное приложение по ТиМП: Файл server/Server/mytcpserver.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Клиент-серверное приложение по ТиМП
+   </div>
+   <div id="projectbrief">Приложение для демонстрации клиент-серверной архитектуры с функционалом: регистрация, авторизация, MD5, метод секущих, работа с графом, RSA шифрование Выполнили: Федотов Егор, Давыденков Степан, Жуковский Кирилл, Токарев Андрей, Степанов Степан</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('mytcpserver_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл mytcpserver.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="mytcpserver_8h_source.html">mytcpserver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="functions__to__server_8h_source.html">functions_to_server.h</a>&quot;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для mytcpserver.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="mytcpserver_8cpp__incl.png" border="0" usemap="#aserver_2_server_2mytcpserver_8cpp" loading="lazy" alt=""/></div>
+<map name="aserver_2_server_2mytcpserver_8cpp" id="aserver_2_server_2mytcpserver_8cpp">
+<area shape="rect" title=" " alt="" coords="454,5,655,32"/>
+<area shape="rect" href="mytcpserver_8h.html" title=" " alt="" coords="305,80,410,107"/>
+<area shape="poly" title=" " alt="" coords="523,32,407,77,406,72,518,33"/>
+<area shape="rect" href="functions__to__server_8h.html" title=" " alt="" coords="482,80,628,107"/>
+<area shape="poly" title=" " alt="" coords="556,31,557,66,553,63,553,35"/>
+<area shape="rect" title=" " alt="" coords="652,80,721,107"/>
+<area shape="poly" title=" " alt="" coords="578,30,653,73,648,72,577,35"/>
+<area shape="rect" title=" " alt="" coords="5,155,75,181"/>
+<area shape="poly" title=" " alt="" coords="305,108,91,157,89,151,304,103"/>
+<area shape="rect" title=" " alt="" coords="99,155,189,181"/>
+<area shape="poly" title=" " alt="" coords="323,107,196,152,195,147,318,107"/>
+<area shape="rect" title=" " alt="" coords="213,155,307,181"/>
+<area shape="poly" title=" " alt="" coords="343,106,290,148,288,143,338,108"/>
+<area shape="rect" title=" " alt="" coords="331,155,384,181"/>
+<area shape="poly" title=" " alt="" coords="359,105,359,141,355,137,355,109"/>
+<area shape="rect" title=" " alt="" coords="408,155,470,181"/>
+<area shape="poly" title=" " alt="" coords="372,105,416,145,411,144,371,110"/>
+<area shape="rect" title=" " alt="" coords="494,155,546,181"/>
+<area shape="poly" title=" " alt="" coords="386,105,483,149,478,149,385,110"/>
+<area shape="rect" title=" " alt="" coords="570,155,635,181"/>
+<area shape="poly" title=" " alt="" coords="564,105,588,143,584,141,562,110"/>
+</map>
+</div>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_41e1742e44e2de38b3bc91f993fed282.html">server</a></li><li class="navelem"><a href="dir_e1917855a2e008a45f7960aba32d3bf1.html">Server</a></li><li class="navelem"><a href="mytcpserver_8cpp.html">mytcpserver.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

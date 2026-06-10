@@ -1,0 +1,9 @@
+<map id="client/client/mainwindow.h" name="client/client/mainwindow.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="209,5,382,32"/>
+<area shape="rect" id="Node000002" href="$moc__mainwindow_8cpp.html" title=" " alt="" coords="5,80,178,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,38,159,82,157,77,250,40"/>
+<area shape="rect" id="Node000003" href="$mainwindow_8cpp.html" title=" " alt="" coords="202,96,389,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="297,46,298,97,293,94,294,50"/>
+<area shape="rect" id="Node000004" href="$regandauth_8cpp.html" title=" " alt="" coords="413,96,594,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="340,36,476,95,471,96,339,41"/>
+</map>

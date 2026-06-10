@@ -109,3 +109,15 @@ void Client::slotError(QAbstractSocket::SocketError error)
         mTcpSocket->connectToHost("127.0.0.1", 33333);
     });
 }
+void Client::setAdmin(bool isAdmin)
+{
+    if (m_isAdmin != isAdmin) {
+        m_isAdmin = isAdmin;
+        emit adminStatusChanged(isAdmin);
+    }
+}
+
+bool Client::isAdmin() const
+{
+    return m_isAdmin;
+}

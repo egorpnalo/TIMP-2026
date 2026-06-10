@@ -1,0 +1,47 @@
+\doxysection{mytcpserver.\+h}
+\hypertarget{mytcpserver_8h_source}{}\label{mytcpserver_8h_source}\index{server/Server/mytcpserver.h@{server/Server/mytcpserver.h}}
+\doxymbox{\hyperlink{mytcpserver_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MYTCPSERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MYTCPSERVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTcpServer>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QHash>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QSet>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_my_tcp_server_aa8084709f2e10d568ee5cc51b543ea4c}{MyTcpServer}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_my_tcp_server_aa8084709f2e10d568ee5cc51b543ea4c}{MyTcpServer}}(quint16\ port\ =\ 33333,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00016\ \ \ \ \ \doxymbox{\hyperlink{class_my_tcp_server_ab39e651ff7c37c152215c02c225e79ef}{\string~MyTcpServer}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Включение/выключение\ режима\ эхо}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_my_tcp_server_a1fcc660a4071983132006c829d1a686a}{setEchoMode}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_my_tcp_server_a88865c8977b48a25ef7909690093a92b}{isEchoMode}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_echoMode;\ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ onNewConnection();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ onReadyRead();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ onClientDisconnected();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ QString\ processCommand(QTcpSocket\ *client,\ \textcolor{keyword}{const}\ QString\ \&command);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ sendResponse(QTcpSocket\ *client,\ \textcolor{keyword}{const}\ QByteArray\ \&response);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ QByteArray\ stripTelnetCommands(\textcolor{keyword}{const}\ QByteArray\ \&data);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ QTcpServer\ *m\_server;}
+\DoxyCodeLine{00034\ \ \ \ \ QList<QTcpSocket*>\ m\_clients;}
+\DoxyCodeLine{00035\ \ \ \ \ QHash<QTcpSocket*,\ QByteArray>\ m\_buffers;}
+\DoxyCodeLine{00036\ \ \ \ \ QSet<QTcpSocket*>\ m\_adminClients;}
+\DoxyCodeLine{00037\ \ \ \ \ quint16\ m\_port;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_echoMode;}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MYTCPSERVER\_H}}
+
+\end{DoxyCode}
